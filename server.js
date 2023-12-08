@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const connectDB = require("./config/db");
 const colors = require("colors");
 
+const cors = require("cors");
 // const { default: connectDB } = require("./config/db");
 
 dotenv.config({ path: "./config/config.env" });
@@ -13,6 +14,9 @@ connectDB();
 const shoes = require("./routes/shoes");
 
 const app = express();
+app.use(express.json());
+
+app.use(cors());
 
 app.use("/api/v1/shoes", shoes);
 

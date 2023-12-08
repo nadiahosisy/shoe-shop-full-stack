@@ -24,12 +24,8 @@ const ShoeSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  id: {
-    type: String,
-    required: true,
-  },
 });
 
-const Shoe = mongoose.model("Shoe", ShoeSchema);
+const Shoe = mongoose.model("Shoe", ShoeSchema, "Shoes");
 
 module.exports = Shoe;
